@@ -6,13 +6,15 @@ export class ReloadResolveService {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    @SkipSelf() private inj: Injector
+    private inj: Injector
   ) {}
 
   public reloadResolve(): Promise<boolean> {
+    const parentActivatedRoute = this.router.routerState.snapshot;
+    console.log(this.router.routerState);
     // 調整導引狀態為尚未導引
     this.router.navigated = false;
-    console.log(this.inj.get(ActivatedRoute));
+    console.log(this.router.config.indexOf(this.route.routeConfig));
     const temp = [];
     for (let index = 0; index < this.router.config.length; index++) {
       temp.push(this.router.config[index].runGuardsAndResolvers);

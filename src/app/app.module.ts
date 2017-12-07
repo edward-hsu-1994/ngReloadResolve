@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MyTestComponent } from './my-test/my-test.component';
 import { ReloadResolveModule } from './reload-resolve/reload-resolve.module';
 import { ReloadResolveService } from './reload-resolve/reload-resolve.service';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, MyTestComponent],

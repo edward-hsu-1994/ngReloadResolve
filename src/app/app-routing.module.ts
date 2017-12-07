@@ -27,6 +27,13 @@ const routes: Routes = [
     resolve: {
       time: TimeResolve
     }
+  },
+  {
+    path: 'def',
+    component: MyTestComponent,
+    resolve: {
+      time: TimeResolve
+    }
   }
 ];
 
