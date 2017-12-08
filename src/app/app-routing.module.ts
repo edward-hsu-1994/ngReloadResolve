@@ -7,7 +7,7 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { MyTestComponent } from './my-test/my-test.component';
+import { MyTestComponent } from './com/my-test/my-test.component';
 
 @Injectable()
 export class TimeResolve implements Resolve<number[]> {
@@ -15,8 +15,7 @@ export class TimeResolve implements Resolve<number[]> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): number[] | Observable<number[]> | Promise<number[]> {
-    console.log(route.queryParams['pp']);
-    return route.queryParams['pp']; // 每次執行都會傳不同的時間
+    return route.queryParams['time']; // 每次執行都會傳不同的時間
   }
 }
 
@@ -30,10 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'def',
-    component: MyTestComponent,
-    resolve: {
-      time: TimeResolve
-    }
+    loadChildren: './sub/sub.module#SubModule'
   }
 ];
 
