@@ -14,6 +14,20 @@ npm install ng-reload-resolve
 
 # Getting Started
 
+## 1. Import
+
+```typescript
+import { ReloadResolveModule } from 'ng-reload-resolve';
+
+@NgModule({
+  ...something...
+  imports: [ReloadResolveModule]
+})
+export class YourModule {}
+```
+
+## 2. DI
+
 ```typescript
 export class MyTestComponent implements OnInit {
   constructor(
