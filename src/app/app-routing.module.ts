@@ -15,6 +15,7 @@ export class TimeResolve implements Resolve<number[]> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): number[] | Observable<number[]> | Promise<number[]> {
+    console.log('Resolve');
     return route.queryParams['time']; // 每次執行都會傳不同的時間
   }
 }

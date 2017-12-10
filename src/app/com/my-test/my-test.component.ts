@@ -16,11 +16,10 @@ export class MyTestComponent implements OnInit {
     public router: Router,
     public route: ActivatedRoute
   ) {
+    console.log('init');
     route.data.subscribe(x => {
       this.time = x['time'];
-      console.log(this.time);
     });
-    console.log(route.routeConfig);
   }
 
   ngOnInit() {}
@@ -36,7 +35,7 @@ export class MyTestComponent implements OnInit {
   }
 
   reload() {
-    this.reloader.reloadResolve();
+    this.reloader.reloadResolve(false);
   }
 
   updateTimeAndReload() {
